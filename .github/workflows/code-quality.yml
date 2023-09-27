@@ -1,0 +1,22 @@
+name: Code Quality
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-ios:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build and test
+        run: xcodebuild test -scheme ViewState -destination 'platform=iOS Simulator,OS=16.2,name=iPhone 14 Pro' -enableCodeCoverage YES
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
