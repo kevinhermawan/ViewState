@@ -1,3 +1,9 @@
+## 1.0.2
+
+### Fixed
+
+- fix: the common state views aren't public
+
 ## 1.0.1
 
 ### Added
