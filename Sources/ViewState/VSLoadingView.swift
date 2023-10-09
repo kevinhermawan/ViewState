@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct VSLoadingView: View {
-    var body: some View {
+public struct VSLoadingView: View {
+    public var body: some View {
         ProgressView()
             .progressViewStyle(.circular)
     }

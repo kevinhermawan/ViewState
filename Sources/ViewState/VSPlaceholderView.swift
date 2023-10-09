@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct VSPlaceholderView<Content: View>: View {
+public struct VSPlaceholderView<Content: View>: View {
     private let title: String
     private let description: String
     private let content: () -> Content
