@@ -1,8 +1,6 @@
 # ViewState
 
-![Test coverage](https://img.shields.io/codecov/c/github/kevinhermawan/ViewState)
-
-An extension that provides essential state modifiers to SwiftUI views
+An extension that provides essential state modifiers to SwiftUI views.
 
 ## Overview
 
@@ -40,13 +38,21 @@ struct Example: View {
             Text("This is the main content.")
         }
         .when(viewState, is: .loading) {
-            Text("Loading...")
+            VSLoadingView()
         }
         .when(viewState, is: .empty) {
-            Text("No data available.")
+            VSPlaceholderView(title: "No Data", subtitle: "There is no data to display.") {
+                Button("Add Data") {
+                    // Add data
+                }
+            }
         }
         .when(viewState, is: .error) {
-            Text("An error occurred.")
+            VSPlaceholderView(title: "Error", subtitle: "An error has occurred.") {
+                Button("Retry") {
+                    // Retry
+                }
+            }
         }
     }
 }

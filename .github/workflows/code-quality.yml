@@ -17,6 +17,3 @@ jobs:
 
       - name: Build and test
         run: xcodebuild test -scheme ViewState -destination 'platform=iOS Simulator,OS=16.2,name=iPhone 14 Pro' -enableCodeCoverage YES
-
-      - name: Upload coverage
-        uses: codecov/codecov-action@v3
