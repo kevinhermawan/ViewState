@@ -1,4 +1,12 @@
+## 1.0.4
+
+### Fixed
+
+- fix: text isn't centered
+
 ## 1.0.3
+
+### Fixed
 
 - fix: `VSLoadingView` initializer is inaccessible
 
