@@ -1,3 +1,7 @@
+## 1.0.3
+
+- fix: `VSLoadingView` initializer is inaccessible
+
 ## 1.0.2
 
 ### Fixed
