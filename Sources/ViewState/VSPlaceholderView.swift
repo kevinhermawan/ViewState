@@ -19,7 +19,7 @@ public struct VSPlaceholderView<Content: View>: View {
     }
     
     public var body: some View {
-        VStack(spacing: 16) {
+        VStack(alignment: .center, spacing: 16) {
             Text(title)
                 .font(.headline)
             
@@ -29,6 +29,7 @@ public struct VSPlaceholderView<Content: View>: View {
             content()
                 .padding(.vertical)
         }
+        .frame(maxWidth: .infinity)
     }
 }
 
