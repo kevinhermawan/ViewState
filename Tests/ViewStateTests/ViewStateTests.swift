@@ -5,35 +5,42 @@ import ViewInspector
 
 final class ViewStateTests: XCTestCase {
     func testLoadingState() throws {
-        let view = createMockView(for: .loading)
+        let view = createMockView(for: .loading, hidden: false)
         let text = try view.inspect().vStack().text(0).string()
         
         XCTAssertEqual(text, "Loading...")
     }
     
     func testEmptyState() throws {
-        let view = createMockView(for: .empty)
+        let view = createMockView(for: .empty, hidden: false)
         let text = try view.inspect().vStack().text(0).string()
         
         XCTAssertEqual(text, "No data available.")
     }
     
     func testErrorState() throws {
-        let view = createMockView(for: .error)
+        let view = createMockView(for: .error, hidden: false)
         let text = try view.inspect().vStack().text(0).string()
         
         XCTAssertEqual(text, "An error occurred.")
     }
     
     func testContentState() throws {
-        let view = createMockView(for: nil)
+        let view = createMockView(for: nil, hidden: false)
         let text = try view.inspect().vStack().text(0).string()
         
         XCTAssertEqual(text, "This is the main content.")
     }
+    
+    func testHidden() throws {
+        let view = createMockView(for: nil, hidden: true)
+        let isHidden = try view.inspect().vStack().text(0).isHidden()
+        
+        XCTAssertTrue(isHidden)
+    }
 }
 
-func createMockView(for state: ViewState?) -> some View {
+func createMockView(for state: ViewState?, hidden: Bool) -> some View {
     VStack {
         Text("This is the main content.")
             .when(state, is: .loading) {
@@ -45,5 +52,6 @@ func createMockView(for state: ViewState?) -> some View {
             .when(state, is: .error) {
                 Text("An error occurred.")
             }
+            .hidden(if: hidden)
     }
 }
