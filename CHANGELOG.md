@@ -1,3 +1,13 @@
+## 1.0.5
+
+### Added
+
+- feat: adds `hidden` modifier
+
+### Misc
+
+- doc: updates README.md
+
 ## 1.0.4
 
 ### Fixed
