@@ -1,3 +1,14 @@
+## 1.1.0
+
+### BREAKING CHANGES
+
+- refactor: removes `.hidden(if:)` modifier
+- refactor: removes `VSLoadingView` and `VSPlaceholderView`
+
+### Added
+
+- feat: adds macOS support
+
 ## 1.0.5
 
 ### Added
