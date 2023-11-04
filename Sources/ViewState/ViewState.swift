@@ -15,15 +15,6 @@ public enum ViewState {
 
 extension View {
     @ViewBuilder
-    public func hidden(if condition: Bool) -> some View {
-        if condition {
-            self.hidden()
-        } else {
-            self
-        }
-    }
-    
-    @ViewBuilder
     public func when<V: View>(_ state: ViewState?, is: ViewState, content: () -> V) -> some View {
         if state == `is` {
             content()

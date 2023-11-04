@@ -26,10 +26,6 @@ Alternatively, in Xcode:
 
 ## Usage
 
-### Managing Content Views
-
-Manage different content views depending on the `ViewState` using the `.when(_, is:)` modifier.
-
 ```swift
 import SwiftUI
 import ViewState
@@ -55,26 +51,6 @@ struct Example: View {
                 Text("An error has occurred.")
             }
         }
-    }
-}
-```
-
-### Hiding Content
-
-Apply the `.hidden(if:)` modifier to conditionally hide or show content based on a boolean value.
-
-```swift
-import SwiftUI
-import ViewState
-
-struct Example: View {
-    @State private var isHidden: Bool = false
-
-    var body: some View {
-        VStack {
-            Text("This is the main content.")
-        }
-        .hidden(if: isHidden)
     }
 }
 ```

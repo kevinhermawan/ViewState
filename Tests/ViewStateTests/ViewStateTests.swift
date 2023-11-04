@@ -31,13 +31,6 @@ final class ViewStateTests: XCTestCase {
         
         XCTAssertEqual(text, "This is the main content.")
     }
-    
-    func testHidden() throws {
-        let view = createMockView(for: nil, hidden: true)
-        let isHidden = try view.inspect().vStack().text(0).isHidden()
-        
-        XCTAssertTrue(isHidden)
-    }
 }
 
 func createMockView(for state: ViewState?, hidden: Bool) -> some View {
@@ -52,6 +45,5 @@ func createMockView(for state: ViewState?, hidden: Bool) -> some View {
             .when(state, is: .error) {
                 Text("An error occurred.")
             }
-            .hidden(if: hidden)
     }
 }
