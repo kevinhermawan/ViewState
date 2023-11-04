@@ -42,20 +42,17 @@ struct Example: View {
             Text("This is the main content.")
         }
         .when(viewState, is: .loading) {
-            VSLoadingView()
+            ProgressView()
+                .progressViewStyle(.circular)
         }
         .when(viewState, is: .empty) {
-            VSPlaceholderView(title: "No Data", subtitle: "There is no data to display.") {
-                Button("Add Data") {
-                    // Add data
-                }
+            ContentUnavailableView {
+                Text("There is no data to display.")
             }
         }
         .when(viewState, is: .error) {
-            VSPlaceholderView(title: "Error", subtitle: "An error has occurred.") {
-                Button("Retry") {
-                    // Retry
-                }
+            ContentUnavailableView {
+                Text("An error has occurred.")
             }
         }
     }
