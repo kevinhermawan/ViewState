@@ -10,10 +10,19 @@ on:
 
 jobs:
   test-ios:
-    runs-on: macos-latest
+    runs-on: macos-13
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Build and test
-        run: xcodebuild test -scheme ViewState -destination 'platform=iOS Simulator,OS=16.2,name=iPhone 14 Pro' -enableCodeCoverage YES
+        run: xcodebuild test -scheme ViewState -destination 'platform=iOS Simulator,name=iPhone 14 Pro'
+
+  test-macos:
+    runs-on: macos-13
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build and test
+        run: xcodebuild test -scheme ViewState -destination 'platform=macOS,arch=x86_64'
