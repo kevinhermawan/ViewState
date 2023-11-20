@@ -1,3 +1,9 @@
+## 1.2.0
+
+### BREAKING CHANGES
+
+- feat: allows to pass an error message
+
 ## 1.1.0
 
 ### BREAKING CHANGES
