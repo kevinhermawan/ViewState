@@ -10,7 +10,7 @@ import SwiftUI
 public enum ViewState: Equatable {
     case loading
     case empty
-    case error(String)
+    case error(message: String)
     
     var errorMessage: String? {
         switch self {

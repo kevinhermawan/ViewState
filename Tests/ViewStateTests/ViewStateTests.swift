@@ -20,7 +20,7 @@ final class ViewStateTests: XCTestCase {
     
     func testErrorState() throws {
         let errorMessage = "An error occurred."
-        let view = createMockView(for: .error(errorMessage), hidden: false)
+        let view = createMockView(for: .error(message: errorMessage), hidden: false)
         let text = try view.inspect().vStack().text(0).string()
         
         XCTAssertEqual(text, errorMessage)
