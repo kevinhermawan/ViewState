@@ -1,3 +1,13 @@
+## 1.2.1
+
+### Fixed
+
+- fix: `errorMessage` is inaccessible
+
+### Improved
+
+- refactor: adds `message` label to `.error`
+
 ## 1.2.0
 
 ### BREAKING CHANGES
