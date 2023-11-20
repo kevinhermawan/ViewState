@@ -19,10 +19,11 @@ final class ViewStateTests: XCTestCase {
     }
     
     func testErrorState() throws {
-        let view = createMockView(for: .error, hidden: false)
+        let errorMessage = "An error occurred."
+        let view = createMockView(for: .error(errorMessage), hidden: false)
         let text = try view.inspect().vStack().text(0).string()
         
-        XCTAssertEqual(text, "An error occurred.")
+        XCTAssertEqual(text, errorMessage)
     }
     
     func testContentState() throws {
@@ -42,8 +43,8 @@ func createMockView(for state: ViewState?, hidden: Bool) -> some View {
             .when(state, is: .empty) {
                 Text("No data available.")
             }
-            .when(state, is: .error) {
-                Text("An error occurred.")
+            .whenError(state) { message in
+                Text(message)
             }
     }
 }

@@ -46,9 +46,9 @@ struct Example: View {
                 Text("There is no data to display.")
             }
         }
-        .when(viewState, is: .error) {
+        .whenError(viewState) { message in
             ContentUnavailableView {
-                Text("An error has occurred.")
+                Text(message)
             }
         }
     }
