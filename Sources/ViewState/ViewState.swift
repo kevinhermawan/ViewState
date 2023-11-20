@@ -12,7 +12,7 @@ public enum ViewState: Equatable {
     case empty
     case error(message: String)
     
-    var errorMessage: String? {
+    public var errorMessage: String? {
         switch self {
         case .error(let message):
             return message
