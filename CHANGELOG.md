@@ -1,3 +1,9 @@
+## 1.2.2
+
+### What's Changed
+
+- feat: adds success state by @kevinhermawan in https://github.com/kevinhermawan/ViewState/pull/1
+
 ## 1.2.1
 
 ### Fixed

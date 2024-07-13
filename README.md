@@ -12,7 +12,7 @@ You can add `ViewState` as a dependency to your project using Swift Package Mana
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/kevinhermawan/ViewState.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/kevinhermawan/ViewState.git", .upToNextMajor(from: "1.2.2"))
 ]
 ```
 
